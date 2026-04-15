@@ -21,9 +21,10 @@ A from-scratch relational database engine built in Java with SQL parsing, query 
 ### Package Structure
 ```
 src/main/java/
+├── main/         # Entry point and end-to-end wiring
 ├── parser/       # SQL tokenization and Query object construction
 ├── executor/     # Query execution and row filtering
-├── planner/      # (coming soon)
+├── planner/      # Query routing between parser and executor
 └── storage/      # In-memory data models (Table, Row, Column, Database)
     └── index/    # (coming soon)
 ```

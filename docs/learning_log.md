@@ -4,7 +4,9 @@
 Day 1: foundational data models and project setup
 Day 2: implement parser to take raw SQL and turn it into a Query object
 Day 3: executor implementation
-Day 4: 
+Day 4: implement planner class to connect parser and executor and main class to run sample query
+Day 5:
+
 
 ---
 
@@ -82,6 +84,29 @@ up a main entry point and run queries against real data in Day 5+.
 
 ## Day 4
 ### What I built
+Built the Planner class to bridge the Parser and Executor. Created the Main
+class to wire all components together end to end. Ran the first real query
+"SELECT Name, Age FROM users WHERE Age > 20" against a hardcoded in-memory
+users table and correctly returned Alice (25) and Charlie (30), filtering out
+Bob (17). Full pipeline working: Parser → Planner → Executor → Storage.
+
+### What confused me
+- null pointer error: uppercase mismatch between parser and table name
+
+### How I resolved it
+- hardcoded all the names to be uppercase for the sake of the sample query
+
+### Performance notes
+N/A — no formal benchmarking yet. First successful end-to-end query confirms
+correctness. Benchmarking begins in Day 5+ once indexing is implemented and
+we can compare full table scan vs index lookup performance.
+
+
+---
+
+
+## Day 5
+### What I built
 
 
 ### What confused me
@@ -97,7 +122,7 @@ up a main entry point and run queries against real data in Day 5+.
 ---
 
 
-## Day 5
+## Day 6
 ### What I built
 
 
