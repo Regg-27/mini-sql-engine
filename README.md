@@ -26,7 +26,7 @@ src/main/java/
 ├── executor/     # Query execution and row filtering
 ├── planner/      # Query routing between parser and executor
 └── storage/      # In-memory data models (Table, Row, Column, Database)
-    └── index/    # (coming soon)
+    └── index/    # HashIndex for O(1) exact match lookups
 ```
 
 ---

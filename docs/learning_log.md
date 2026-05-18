@@ -5,7 +5,8 @@ Day 1: foundational data models and project setup
 Day 2: implement parser to take raw SQL and turn it into a Query object
 Day 3: executor implementation
 Day 4: implement planner class to connect parser and executor and main class to run sample query
-Day 5:
+Day 5: implement hash index and tests for executor and parser
+Day 6:
 
 
 ---
@@ -107,16 +108,27 @@ we can compare full table scan vs index lookup performance.
 
 ## Day 5
 ### What I built
-
+Added JUnit 5 to pom.xml and wrote unit tests for the Parser (testParseTableName,
+testParseSelectedColumns, testParseWhereCondition) and Executor
+(testWhereGreaterThan, testWhereLessThan, testNoWhereClause) with a @BeforeEach
+setup method to avoid repeated test data. Built HashIndex class in storage/index
+using HashMap<Object, ArrayList<Row>> for O(1) exact match lookups. Added
+buildIndex and getIndex methods to Table. Wired the hash index into the Executor
+as a fast path for = queries, falling back to full table scan for range queries.
 
 ### What confused me
-- 
+- some of the HashMap functions
+- recalling past implementations after returning from a few weeks break
 
 ### How I resolved it
-
+- reviewed hashmap functions
+- reviewed my documentation
 
 ### Performance notes
-
+Hash index provides O(1) lookup for exact match queries (WHERE col = value).
+Full table scan remains O(n) for range queries (>, <). B+ tree index in Day 6
+will address range query performance. Formal benchmarking comparing scan vs
+index will be added in Day 8.
 
 
 ---
