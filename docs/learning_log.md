@@ -6,7 +6,12 @@ Day 2: implement parser to take raw SQL and turn it into a Query object
 Day 3: executor implementation
 Day 4: implement planner class to connect parser and executor and main class to run sample query
 Day 5: implement hash index and tests for executor and parser
-Day 6:
+Day 6: implement B+Tree class with insert, search, and rangeSearch
+Day 7:
+Day 8:
+Day 9:
+Day 10:
+
 
 
 ---
@@ -135,6 +140,81 @@ index will be added in Day 8.
 
 
 ## Day 6
+### What I built
+Built a B+ tree implementation in Java with insert, search, and rangeSearch
+methods. Internal nodes navigate by key comparisons, leaf nodes store actual
+row data. Leaves are linked together for efficient range scans. Handles root
+splitting when a leaf exceeds the order. Known limitation: non-root leaf splits
+do not propagate up to parent nodes — noted as a future improvement.
+
+### What confused me
+- translating conceptual understanding of the B+ tree onto code
+
+### How I resolved it
+- studying up on B+ Tree implementations
+
+
+### Performance notes
+B+ tree search is O(log n) vs hash index O(1) for exact matches, but B+ tree
+supports range queries which hash index cannot. Range scan efficiency comes
+from the leaf linked list — no backtracking needed once the start is found.
+
+
+---
+
+
+## Day 7
+### What I built
+
+
+### What confused me
+- 
+
+### How I resolved it
+
+
+### Performance notes
+
+
+
+---
+
+
+## Day 8
+### What I built
+
+
+### What confused me
+- 
+
+### How I resolved it
+
+
+### Performance notes
+
+
+
+---
+
+
+## Day 9
+### What I built
+
+
+### What confused me
+- 
+
+### How I resolved it
+
+
+### Performance notes
+
+
+
+---
+
+
+## Day 10
 ### What I built
 
 
